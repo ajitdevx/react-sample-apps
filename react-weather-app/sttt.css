@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+input[type=text]:focus, 
+[type=text].form-control:focus {
+  box-shadow: inset 0 -1px 0 transparent;
+}
+
+.weather h5 {
+    font-weight: 600;
+    font-size: 1.25rem;
+    color: #396bae;
+    margin-bottom: 2rem;
+}
+
+.weather-container svg {
+    width: 100px;
+    height: 100px;
+}
+
+.weather-value {
+    font-size: 4.5rem;
+    font-weight: 200;
+}
+
+body {
+    font-family: "Poppins", sans-serif;    
+    background-color: #38AEDA;
+    font-size: 16px;
+}
+
+.day, .weather-info {
+    color: #396bae;
+    font-weight: 600;
+}
+
+.temp-high-low {
+    color: #396bae;
+}
+
+.forcast-container {
+    background-color: transparent;
+    background-color: #fff;
+    margin: 20px;
+    
+}
+
+.forcast {
+    padding: 10px 50px;
+}
+
+.text-d-blue {
+    color: #396bae;
+    font-weight: 600;
+}
+
+.text-light-grey {
+    color: #A1B9CE;
+}
+
+.highlights svg {
+    color: #A1B9CE;
+    filter: invert(32%) sepia(8%) saturate(276%) hue-rotate(88deg) brightness(190%) contrast(119%);
+}
