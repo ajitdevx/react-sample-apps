@@ -1,1 +1,3 @@
-React
+Digital Business Card
+Static website
+Components
