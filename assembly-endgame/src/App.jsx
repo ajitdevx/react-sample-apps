@@ -99,6 +99,11 @@ export default function App() {
         }
     }
 
+    const newGame = () => {
+        setCurrentWord(getWord());
+        setGuessedLetter([])
+    }
+
     return (
         <main>
             <section aria-live='polite' role='status' className="game-header">
@@ -123,7 +128,7 @@ export default function App() {
             {
                 isGameOver && (
                     <section className='game-footer'>
-                        <button>New Game</button>
+                        <button onClick={newGame}>New Game</button>
                     </section>
                 )
             }
