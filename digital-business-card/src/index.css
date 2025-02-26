@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+body {
+  font-family: "Inter", "Merriweather", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.app {
+  background-color: #33373E;
+}
+
+.card {
+  background-color: #F5F5F5;
+  color: #2B283A;
+}
+
+.btn {
+  width: 50%;
+}
+.btn--email {
+  background-color: #FFFFFF;
+  color: #374151;
+  border: 1px solid #374151;
+  font-weight: normal;
+  font-size: 14px;
+}
+
+.btn--linkedin {
+  background-color: #297FE5;
+  color: #FFFF;
+  border: 1px solid #374151;
+  font-weight: normal;
+  font-size: 14px;
+}
+
+.about h4 {
+  font-size: 16px;
+  font-weight: bolder;
+  margin: 20px 0px 3px;
+}
+
+.about p, .interest p {
+  font-size: 10.24px;
+  color: #4A4E74;
+}
+
+.profession {
+  color: #F47D27;
+  font-size: 12.08px;
+}
+
+.website {
+  color: #4A4E74;
+  font-size: 12.08px;
+}
+
+.name {
+  font-weight: bold;
+  font-size: 25px;
+  margin-bottom: 0px;
+}
+
+.card-footer {
+  background-color: #D5D4D8;
+  font-size: 20px;
+}
+
+/* :root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+} */
