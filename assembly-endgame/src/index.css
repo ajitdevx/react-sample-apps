@@ -31,16 +31,28 @@ section {
     text-align: center;
 }
 
-.game-header p {
+.game-header>p {
     color: #8E8E8E;
 }
 
 .game-status {
-    background-color: #7A5EA7;
-    padding: 5px;
+    padding: 2px 5px;
+    border-radius: 5px;
+    color: #F9F4DA;
+    min-height: 70px;
 }
 
-.game-status p {
+.game-status strong {
+    font-size: 1.3rem;
+}
+
+.game-status.won {
+    background-color: #10A95B;
+    color: #F9F4DA;
+}
+
+.game-status.lost {
+    background-color: #BA2A2A;
     color: #F9F4DA;
 }
 
@@ -56,6 +68,10 @@ section {
     align-items: center;
     display: inline-block;
     font-size: .85rem;
+}
+
+.game-languages>span.lost {
+    opacity: 0.2;
 }
 
 /**
