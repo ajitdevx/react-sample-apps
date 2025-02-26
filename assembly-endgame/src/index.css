@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* * {
+    box-shadow: border-box;
+} */
+
+body {
+    font-family: "Hanken Grotesk", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    margin: 0;
+    background-color: #282726;
+}
+
+div#root {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+section {
+    max-width: 400px;
+    padding: 10px;
+    text-align: center;
+}
+
+.game-header {
+    color: #F9F4DA;
+    text-align: center;
+}
+
+.game-header p {
+    color: #8E8E8E;
+}
+
+.game-status {
+    background-color: #7A5EA7;
+    padding: 5px;
+}
+
+.game-status p {
+    color: #F9F4DA;
+}
+
+.game-languages {
+    color: #F9F4DA;
+    text-align: center;
+}
+
+.game-languages>span {
+    padding: 5px;
+    border-radius: 5px;
+    margin: 5px;
+    align-items: center;
+    display: inline-block;
+    font-size: .85rem;
+}
+
+.game-languages>span:nth-child(1) {
+    background-color: #E2680F;
+}
+
+.game-languages>span:nth-child(2) {
+    background-color: #328AF1;
+}
+
+.game-languages>span:nth-child(3) {
+    background-color: #FFD742;
+    color: #1E1E1E;
+}
+
+.game-languages>span:nth-child(4) {
+    background-color: #2ED3E9;
+}
+
+.game-languages>span:nth-child(5) {
+    background-color: #298EC6;
+}
+
+.game-languages>span:nth-child(6) {
+    background-color: #599137;
+}
+
+.game-languages>span:nth-child(7) {
+    background-color: #F4EB13;
+    color: #1E1E1E;
+}
+
+.game-languages>span:nth-child(8) {
+    background-color: #D02B2B;
+}
+
+.game-languages>span:nth-child(9) {
+    background-color: #2D519F;
+}
+
+.game-input-keys {
+    text-align: center;
+}
+
+.game-input-keys>input[type="text"] {
+    padding: 5px;
+    width: 30px;
+    height: 30px;
+    background-color: transparent;
+    border-right: #323232;
+    border-bottom: 1px solid #F9F4DA;
+    margin: 1px;
+    outline: none;
+    color: #F9F4DA;
+    font-family: "Hanken Grotesk", serif;
+    font-size: 1rem;
+    text-align: center;
+}
+
+.game-keys {
+    text-align: center;
+}
+
+.game-keys>.key {
+    background-color: #FCBA29;
+    color: #1E1E1E;
+    border-color: #D7D7D7;
+    width: 40px;
+    height: 40px;
+    font-family: "Hanken Grotesk", serif;
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 5px;
+    border-radius: 5px;
+}
+
+.key.right {
+    background-color: #10A95B;
+}
+
+.key.wrong {
+    background-color: #EC5D49;
+}
+
+.game-footer>button {
+    background-color: #11B5E5;
+    color: #1E1E1E;
+    border-color: #D7D7D7;
+    padding: 5px 50px;
+    font-family: "Hanken Grotesk", serif;
+    font-size: 1rem;
+    font-weight: 700;
+    border-radius: 3px;
+}
