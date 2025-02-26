@@ -6,7 +6,9 @@ const LanguageElement = (prop) => {
     }
 
     return (
-        <span style={style}>{prop.name}</span>
+        <span
+            className={prop.className}
+            style={style}>{prop.name}</span>
     )
 }
 
