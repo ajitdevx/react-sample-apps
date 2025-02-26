@@ -1,0 +1,135 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+
+/* 
+We are setting all elements to have zero margins, and zero padding, thus making them look the same in all browsers. 
+with the help of * and my favorite font-family Poppins
+*/
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  box-sizing: border-box;
+}
+
+/* Now will set all the HTML elements in to center of the screen, for that will add styles to the 
+body and .container.
+ */
+body {
+  background: #78c1f3;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  background: #ffffff;
+  padding: 25px;
+  width: 650px;
+  border-radius: 10px;
+}
+
+.todo-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.todo-header i {
+  font-size: 26px;
+  padding: 0px 10px;
+}
+
+/* Todo Body */
+.todo-body {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 30px;
+  padding-left: 20px;
+  margin-bottom: 35px;
+  background: #edeef0;
+}
+
+.todo-body input {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  padding: 15px 0;
+  font-size: 20px;
+}
+
+.todo-body button {
+  border-radius: 40px;
+  height: 55px;
+  width: 55px;
+  padding: 15px;
+  background: limegreen;
+  cursor: pointer;
+}
+
+.todo-filter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.todo-filter select {
+  width: 100px;
+  font-size: 15px;
+  margin-bottom: 8px;
+  border-radius: 5px;
+  padding: 5px;
+  width: 150px;
+}
+
+/* list of todo list's */
+ul li {
+  list-style: none;
+  font-size: 18px;
+  cursor: pointer;
+  padding: 10px;
+}
+
+li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #edeef0;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+
+h5 {
+  text-align: center;
+  margin-bottom: 10px;
+  color: green;
+}
+
+.todo-controls {
+  width: 25px;
+  height: 25px;
+  padding: 3px;
+  margin-right: 5px;
+  border: none;
+  font-size: 16px;
+}
+
+.todo-controls:hover {
+  cursor: pointer;
+}
+
+ul li input {
+  margin: 0px 10px 0px 3px;
+}
+
+ul li label {
+  cursor: pointer;
+}
+
+ul li small {
+  font-size: x-small;
+  margin: 0px 10px 0px 3px;
+}
