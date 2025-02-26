@@ -5,6 +5,7 @@ import { languages } from './languages'
 import Letter from './Letter';
 import clsx from 'clsx';
 import { getFarewellText, getWord } from './util';
+import Confetti from 'react-confetti'
 
 export default function App() {
     const [currentWord, setCurrentWord] = useState(() => getWord());
@@ -112,6 +113,7 @@ export default function App() {
     return (
         <main>
             <section aria-live='polite' role='status' className="game-header">
+                {isGameWon && <Confetti />}
                 <h2>Assembly: Endgame</h2>
                 <p>Guess the word in under 8 attempts to keep the programming world safe from Assembly!</p>
 
