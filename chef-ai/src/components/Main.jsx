@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { getRecipeFromChefClaude } from "../ai";
 import ClaudeRecipe from "./ClaudeRecipe";
+import { useRef } from "react";
+import { useEffect } from "react";
 
 
 export default function Main() {
@@ -8,6 +10,12 @@ export default function Main() {
     const defaultIngredients = ["Chicken breasts", "Most of the main spices", "Olive oil", "Heavy cream", "Chicken broth", "Parmesan cheese", "Spinach"]
     const [ingredients, setIngredients] = useState(defaultIngredients);
     const [recipe, setRecipe] = useState(false);
+    const recipeSection = useRef(null);
+    console.log(recipeSection);
+
+    useEffect(() => {
+        recipe && recipeSection.current?.scrollIntoView({behavior: 'smooth'});
+    }, [recipe])
 
     const ingredientsListItems = ingredients.map(ingredient => (
         <li key={ingredient}>{ingredient}</li>
@@ -21,7 +29,7 @@ export default function Main() {
     const getRecipe = async () => {
         const response = await getRecipeFromChefClaude(ingredients)
         console.log(response)
-        setRecipe(response.content[0].text)
+        setRecipe(response.content[0].text);
     }
 
     return (
@@ -37,7 +45,7 @@ export default function Main() {
                 <Ingredients
                     ingredientsListItems={ingredientsListItems} getRecipe={getRecipe} />
             }
-            {recipe && <ClaudeRecipe recipe={recipe} />}
+            {recipe && <ClaudeRecipe recipe={recipe} ref={recipeSection} />}
 
         </main>
     )
