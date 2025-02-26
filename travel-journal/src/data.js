@@ -3,7 +3,6 @@ export default [
         id: 1,
         img: {
             src: "https://scrimba.com/links/travel-journal-japan-image-url",
-            //psrc: "https://nl.hideproxy.me/go.php?u=5KkDV9rx%2Fbe4ze9ORaWT9jI2Zg2OxjTIE3HWAVLVCYYzhCQzkXsb1G8j0dIO3tgd0SoFerKO0mq%2BP31hu0cl30X3CsdimLFve6dSm6mLpSyVis%2BVD6fakACZB8u81cXrVHjwTYlqWLshrgIjGKQk9EQdM5HIP5nYOlwFXCDYT0U8SLVVmL9mI33oXaC4UNqEUNhhFpxKiCN4bLFdw5%2FDr7YXzQIIjmxSyOSDbI%2B0Q5fY&b=5",
             alt: "Mount Fuji"
         },
         title: "Mount Fuji",
