@@ -28,38 +28,15 @@ export default function App() {
             </section>
 
             <section className="game-languages">
-                <span>HTML</span>
-                <span>CSS</span>
-                <span>Javascript</span>
-                <span>React</span>
-                <span>Typescript</span>
-                <span>Node.js</span>
-                <span>Python</span>
-                <span>.NET</span>
-                <span>Assembly</span>
+                {languageElements}
             </section>
 
-            <section className="game-input-keys">
-                <input type="text" value="A" />
-                <input type="text" value="B" />
-                <input type="text" value="C" />
-                <input type="text" value="B" />
-                <input type="text" value="B" />
+            <section className="game-input-letter">
+                {letterElements}
             </section>
 
             <section className="game-keys">
-                <Key value="A" />
-                <Key value="A" />
-                <Key value="A" />
-                <Key value="A" />
-                <Key value="A" />
-                <Key value="A" />
-                <Key value="A" />
-                <Key value="A" />
-                <Key value="A" />
-                <Key value="A" />
-                <Key value="A" />
-                <Key value="A" />
+                {keyElements}
             </section>
 
             <section className='game-footer'>
