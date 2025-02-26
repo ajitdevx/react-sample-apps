@@ -1,12 +1,12 @@
-import Navbar from "./components/Navbar";
-import Funfacts from "./components/Funfacts";
-
+import BusinessCard from "./components/BusinessCard";
 function App() {
   return (
-    <div className="app">
-      <Navbar />
-      <Funfacts />
-    </div>
+    <main className="app">
+      <div className="d-flex justify-content-center align-items-center gap-5">
+        <BusinessCard />
+        <BusinessCard />
+      </div>
+    </main>
   )
 }
 
