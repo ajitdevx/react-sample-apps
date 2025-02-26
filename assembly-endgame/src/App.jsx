@@ -1,20 +1,70 @@
+import { useState } from 'react';
 import Key from './Key'
 import LanguageElement from './LanguageElement';
 import { languages } from './languages'
+import Letter from './Letter';
+import clsx from 'clsx';
 
 export default function App() {
-    const [currentWord, setCurrentWord] = useState('Apple');
+    const [currentWord, setCurrentWord] = useState('react');
+    const [guessedLetters, setGuessedLetter] = useState([])
 
-    const currentWordCharacter = [...currentWord]
-    console.log(currentWordCharacter)
+    const alphabet = 'abcdefghijklmnopqrstuvwxyz';
 
-    const languageElements = languages && languages.map(language => (
-        <LanguageElement
-            key={language.name}
-            name={language.name}
-            backgroundColor={language.backgroundColor}
-            color={language.color} />
-    ));
+    const currentLetters = [...currentWord];
+    const rightGuessCount = currentLetters.filter(letter =>
+        guessedLetters.includes(letter)
+    ).length;
+
+    const isGameWon = rightGuessCount == currentLetters.length;
+    const wrongGuessCount = guessedLetters.length - rightGuessCount;
+    const isGameLost = wrongGuessCount > currentLetters.length || !isGameWon;
+    const isGameOver = isGameWon || isGameLost;
+
+    const addGuessedLetter = (letter) => {
+        setGuessedLetter(prev => (
+            prev.includes(letter)
+                ? prev
+                : [...prev, letter]
+        ))
+    }
+
+    const languageElements = languages
+        && languages.map((language, index) => {
+
+            const className = clsx({
+                'lost': index < wrongGuessCount
+            })
+
+            return <LanguageElement
+                className={className}
+                key={language.name}
+                name={language.name}
+                backgroundColor={language.backgroundColor}
+                color={language.color} />
+        });
+
+    const letterElements = currentLetters.map((char, index) => {
+        const isGuessedLetterCorrect = guessedLetters.includes(char);
+        return <Letter
+            key={index}
+            value={isGuessedLetterCorrect && char.toUpperCase()} />
+    })
+
+    const keyElements = [...alphabet].map(char => {
+
+        const className = clsx({
+            'key': true,
+            'right': guessedLetters.includes(char) && currentLetters.includes(char),
+            'wrong': guessedLetters.includes(char) && !currentLetters.includes(char)
+        })
+
+        return <Key
+            className={className}
+            key={char}
+            value={char}
+            addGuessedLetter={() => addGuessedLetter(char)} />
+    })
 
     return (
         <main>
@@ -39,9 +89,14 @@ export default function App() {
                 {keyElements}
             </section>
 
-            <section className='game-footer'>
-                <button>New Game</button>
-            </section>
+            {
+                isGameOver && (
+                    <section className='game-footer'>
+                        <button>New Game</button>
+                    </section>
+                )
+            }
+
         </main>
     )
 }
