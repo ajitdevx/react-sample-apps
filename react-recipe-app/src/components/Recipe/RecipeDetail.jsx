@@ -10,7 +10,6 @@ const defaultRecipe = {
 
 const RecipeDetail = () => {
     const { id } = useParams();
-    console.log('prams', id);
     const [recipe, setRecipe] = useState(defaultRecipe);
 
     useEffect(() => {
