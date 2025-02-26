@@ -64,6 +64,7 @@ export default function App() {
             className={className}
             key={char}
             value={char}
+            isGameOver={isGameOver}
             addGuessedLetter={() => addGuessedLetter(char)} />
     });
 
@@ -100,22 +101,22 @@ export default function App() {
 
     return (
         <main>
-            <section className="game-header">
+            <section aria-live='polite' role='status' className="game-header">
                 <h2>Assembly: Endgame</h2>
                 <p>Guess the word in under 8 attempts to keep the programming world safe from Assembly!</p>
 
                 {renderGameStatus()}
             </section>
 
-            <section className="game-languages">
+            <section aria-live="polite" className="game-languages">
                 {languageElements}
             </section>
 
-            <section className="game-word">
+            <section aria-live="polite" className="game-word">
                 {letterElements}
             </section>
 
-            <section className="game-keys">
+            <section aria-live="polite" className="game-keys">
                 {keyElements}
             </section>
 

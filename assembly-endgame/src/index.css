@@ -153,6 +153,10 @@ section {
     text-transform: uppercase;
 }
 
+button:disabled {
+    cursor: not-allowed;
+}
+
 .key.right {
     background-color: #10A95B;
 }
