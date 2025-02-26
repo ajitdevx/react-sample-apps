@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+:root {
+  --font-family: "Inter", serif;
+  --font-weight: 300;
+  --font-style: normal;
+  --line-height: 1.5;
+  --box-sizing: border-box;
+}
+
+* {
+  box-sizing: var(--box-sizing);
+}
+
+body {
+  background-color: #FAFAF8;
+  font-family: var(--font-family);
+  font-weight: var(--font-weight);
+  font-style: var(--font-style);  
+  font-optical-sizing: auto;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff;
+  height: 80px;
+  box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.10), 0px 1px 2px 0px rgba(0, 0, 0, 0.06);
+}
+
+header img {
+  width: 60px;
+  height: 60px;
+  padding: 0 4px;
+}
+
+header h1 {
+  font-weight: 500;
+}
+
+main {
+  padding: 30px 30px 10px;
+}
+
+.add-ingredient-form {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  height: 38px;
+}
+
+.add-ingredient-form>input {
+  font-family: var(--font-family);
+  border-radius: 6px;
+  background-color: #FFFFFF;
+  padding: 9px 15px;
+  border-color: 1px solid #6B7280;
+  flex-grow: 1;
+  min-width: 150px;
+  max-width: 400px;
+}
+
+.add-ingredient-form>button {
+  font-family: var(--font-family);
+  border-radius: 6px;
+  border: none;
+  background-color: #141413;
+  color: #FAFAF8;
+  width: 150px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.add-ingredient-form>button::before {
+  content: "+";
+  margin-right: 5px;
+}
+
+.ingredients {
+  color: #475467;
+  margin-top: 30px;
+}
+
+ul.ingredients-list {
+  margin-bottom: 48px;
+}
+
+ul.ingredients-list>li {
+  color: #475467;
+  line-height: 28px;
+}
+
+.get-recipe-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 8px;
+  background: #F0EFEB;
+  padding: 20px 28px;
+}
+
+.get-recipe-container h3 {
+  font-size: 1.125rem;
+  font-weight: 500;
+  line-height: 24px;
+}
+
+.get-recipe-container p {
+  color: #6B7280;
+  font-size: 0.875rem;
+  line-height: 20px;
+}
+
+.get-recipe-container button {
+  background-color: #D17557;
+  color: #FAFAF8;
+  font-family: var(--font-family);
+  padding: 9px 17px;
+  border-radius: 5px;
+  border: none;
+  font-weight: bold;
+  font-size: 0.89em;
+  cursor: pointer;
+}
+
+.suggested-recipe-container {
+  color: #475467;
+  line-height: 28px;
+  font-size: 1.125rem;
+  font-weight: 400;
+}
+
+.suggested-recipe-container ul li, .suggested-recipe-container ol li {
+  margin-bottom: 8px;
+}
