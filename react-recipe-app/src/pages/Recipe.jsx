@@ -1,15 +1,39 @@
 import { useEffect, useState } from "react";
 import { recipeService } from "../_services/recipe.service";
+import { RecipeCategory } from "../components/Recipe/RecipeCategory";
+import RecipeList from "../components/Recipe/RecipeList";
+
+const defaultCategory = {
+    categories: [],
+    activeCategoryName: 'Beef'
+}
+
+const defaultRecipe = {
+    items: [],
+    searchTerm: ''
+}
 
 const Recipe = () => {
-    const [recipes, setRecipes] = useState(null);
+    const [recipes, setRecipes] = useState(defaultRecipe);
+    const [category, setCategory] = useState(defaultCategory);
 
     useEffect(() => {
-        recipeService.get().then(response => {
-            console.log('in ui', response);
-            setRecipes(response);
+        recipeService.getRecipeCategories().then(data => {
+            setCategory({
+                categories: data || [],
+                activeCategoryName: data?.[0] || 'Beef'
+            });
+        });
+
+    }, []);
+
+    useEffect(() => {        
+        recipeService.getRecipesByCategory(category.activeCategoryName).then(data => {
+            setRecipes({
+                items: data.meals || [],
+            });
         })
-    }, [])
+    }, [category.activeCategoryName])
 
     return (
         <>
@@ -34,165 +58,9 @@ const Recipe = () => {
                             What to <span className="text-warning">Cook</span> ?
                         </h3>
                     </div>
-                    <div className="d-flex justify-content-center px-5 mx-5 categories flex-wrap align-items-center">
-                        <button
-                            className="btn btn-dark rounded-pill px-3 mx-3 mb-3"
-                            type="button"
-                        >
-                            All Types
-                        </button>
-                        <button
-                            className="btn btn-light rounded-pill px-3 mx-3 mb-3"
-                            type="button"
-                        >
-                            Main Courses
-                        </button>
-                        <button
-                            className="btn btn-light rounded-pill px-3 mx-3 mb-3"
-                            type="button"
-                        >
-                            Salads &amp; Sides
-                        </button>
-                        <button
-                            className="btn btn-light rounded-pill px-3 mx-3 mb-3"
-                            type="button"
-                        >
-                            Vegitaien Delights
-                        </button>
-                        <button
-                            className="btn btn-light rounded-pill px-3 mx-3 mb-3"
-                            type="button"
-                        >
-                            International Flavous
-                        </button>
-                        <button
-                            className="btn btn-light rounded-pill px-3 mx-3 mb-3"
-                            type="button"
-                        >
-                            All Types
-                        </button>
-                        <button
-                            className="btn btn-light rounded-pill px-3 mx-3 mb-3"
-                            type="button"
-                        >
-                            Vegitaien Delights
-                        </button>
-                        <button
-                            className="btn btn-light rounded-pill px-3 mx-3 mb-3"
-                            type="button"
-                        >
-                            International Flavous
-                        </button>
-                        <button
-                            className="btn btn-light rounded-pill px-3 mx-3 mb-3"
-                            type="button"
-                        >
-                            All Types
-                        </button>
-                        <button
-                            className="btn btn-light rounded-pill px-3 mx-3 mb-3"
-                            type="button"
-                        >
-                            Vegitaien Delights
-                        </button>
-                        <button
-                            className="btn btn-light rounded-pill px-3 mx-3 mb-3"
-                            type="button"
-                        >
-                            International Flavous
-                        </button>
-                        <button
-                            className="btn btn-light rounded-pill px-3 mx-3 mb-3"
-                            type="button"
-                        >
-                            All Types
-                        </button>
-                    </div>
+                    <RecipeCategory category={category} />
                 </div>
-                <div className="container">
-                    <div className="row row-cols-1 row-cols-md-4 g-4">
-                        <div className="col">
-                            <div className="card p-2 bg-gray">
-                                <div className="card-body">
-                                    <h5 className="card-title">Classic Margherita Pizza</h5>
-                                </div>
-                                <img
-                                    src="https://cdn.dummyjson.com/recipe-images/1.webp"
-                                    className="card-img-bottom"
-                                    alt="..."
-                                />
-                                <div className="card-footer d-grid gap-2">
-                                    <button
-                                        className="btn btn-dark btn-block rounded-pill"
-                                        type="button"
-                                    >
-                                        See Complete Recipe
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col">
-                            <div className="card p-2 bg-gray">
-                                <div className="card-body">
-                                    <h5 className="card-title">Classic Margherita Pizza</h5>
-                                </div>
-                                <img
-                                    src="https://cdn.dummyjson.com/recipe-images/1.webp"
-                                    className="card-img-bottom"
-                                    alt="..."
-                                />
-                                <div className="card-footer d-grid gap-2">
-                                    <button
-                                        className="btn btn-dark btn-block rounded-pill"
-                                        type="button"
-                                    >
-                                        See Complete Recipe
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col">
-                            <div className="card p-2 bg-gray">
-                                <div className="card-body">
-                                    <h5 className="card-title">Classic Margherita Pizza</h5>
-                                </div>
-                                <img
-                                    src="https://cdn.dummyjson.com/recipe-images/1.webp"
-                                    className="card-img-bottom"
-                                    alt="..."
-                                />
-                                <div className="card-footer d-grid gap-2">
-                                    <button
-                                        className="btn btn-dark btn-block rounded-pill"
-                                        type="button"
-                                    >
-                                        See Complete Recipe
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col">
-                            <div className="card p-2 bg-gray">
-                                <div className="card-body">
-                                    <h5 className="card-title">Classic Margherita Pizza</h5>
-                                </div>
-                                <img
-                                    src="https://cdn.dummyjson.com/recipe-images/2.webp"
-                                    className="card-img-bottom"
-                                    alt="..."
-                                />
-                                <div className="card-footer d-grid gap-2">
-                                    <button
-                                        className="btn btn-dark btn-block rounded-pill"
-                                        type="button"
-                                    >
-                                        See Complete Recipe
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <RecipeList recipes={recipes} />
             </main>
 
         </>

@@ -7,6 +7,7 @@ import Recipe from "./pages/Recipe";
 import Blog from "./pages/Blog";
 import Contact from "./pages/Contact";
 import RootLayout from "./Layouts/RootLayout";
+import RecipeDetail from "./components/Recipe/RecipeDetail";
 
 //router & routes
 const router = createBrowserRouter(
@@ -15,6 +16,7 @@ const router = createBrowserRouter(
             <Route index element={<Home />} />
             <Route path="about" element={<About />} />
             <Route path="recipe" element={<Recipe />} />
+            <Route path="recipe/:id" element={<RecipeDetail />} />
             <Route path="blog" element={<Blog />} />
             <Route path="contact" element={<Contact />} />
         </Route>
