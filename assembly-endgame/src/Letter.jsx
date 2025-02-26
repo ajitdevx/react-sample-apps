@@ -1,7 +1,7 @@
 const Letter = (prop) => {
 
     return (
-        <span>{prop.value}</span>
+        <span className={prop.className}>{prop.value}</span>
     )
 }
 

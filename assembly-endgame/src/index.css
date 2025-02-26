@@ -153,6 +153,10 @@ section {
     text-transform: uppercase;
 }
 
+.game-word span.missed-letter {
+    color: #EC5D49;
+}
+
 button:disabled {
     cursor: not-allowed;
 }

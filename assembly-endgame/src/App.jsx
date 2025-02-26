@@ -46,10 +46,15 @@ export default function App() {
         });
 
     const letterElements = currentLetters.map((char, index) => {
-        const isGuessedLetterCorrect = guessedLetters.includes(char);
+        const shouldRevealLetter = isGameLost || guessedLetters.includes(char);
+
+        const letterClassName = clsx(
+            isGameLost && !guessedLetters.includes(char) && "missed-letter"
+        )
         return <Letter
+            className={letterClassName}
             key={index}
-            value={isGuessedLetterCorrect && char.toUpperCase()} />
+            value={shouldRevealLetter && char.toUpperCase()} />
     })
 
     const keyElements = [...alphabet].map(char => {
