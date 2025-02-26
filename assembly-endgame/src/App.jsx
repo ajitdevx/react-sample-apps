@@ -4,10 +4,10 @@ import LanguageElement from './LanguageElement';
 import { languages } from './languages'
 import Letter from './Letter';
 import clsx from 'clsx';
-import { getFarewellText } from './util';
+import { getFarewellText, getWord } from './util';
 
 export default function App() {
-    const [currentWord, setCurrentWord] = useState('react');
+    const [currentWord, setCurrentWord] = useState(() => getWord());
     const [guessedLetters, setGuessedLetter] = useState([])
 
     const alphabet = 'abcdefghijklmnopqrstuvwxyz';
