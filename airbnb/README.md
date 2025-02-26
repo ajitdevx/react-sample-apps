@@ -1,6 +1,6 @@
-# Airbnb Static Website
+# airbnb clone Static Website
 
-What we'll leran
+What we'll learn
 Props
 Creating components from an array
 
