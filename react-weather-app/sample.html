@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather App</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="sttt.css">
+</head>
+
+<body>
+
+    <div id="root">
+        <div class="container d-flex flex-column align-items-center justify-content-center min-vh-100">
+            <!-- Search Bar -->
+            <div class="container p-0 my-2 bg-body-tertiary rounded border">
+                <input type="text" class="form-control px-3" placeholder="Search...">
+            </div>
+
+            <!-- Container -->
+            <div class="container shadow p-3 bg-body-tertiary rounded">
+                <div class="d-flex justify-content-between">
+                    <p class="lead mt-2 mb-2 text-light-grey">
+                        Current Weather
+                    </p>
+                    <div class="form-check form-switch text-light-grey lead">
+                        <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+                        <label class="form-check-label" for="flexSwitchCheckDefault">Celsuis</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-6">
+                        <div class="weather-container">
+                            <h5 class="py-3 px-5 text-d-blue">Paris</h5>
+                            <div class="d-flex px-5">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48">
+                                    <path fill="#BBDEFB" d="M18.5 4A8.5 8.5 0 1 0 18.5 21A8.5 8.5 0 1 0 18.5 4Z" />
+                                    <path fill="#BBDEFB" d="M19 20A7 7 0 1 0 19 34A7 7 0 1 0 19 20Z" />
+                                    <path fill="#BBDEFB"
+                                        d="M11 14A7 7 0 1 0 11 28 7 7 0 1 0 11 14zM38 14A6 6 0 1 0 38 26 6 6 0 1 0 38 14z" />
+                                    <path fill="#BBDEFB" d="M30 19A6 6 0 1 0 30 31A6 6 0 1 0 30 19Z" />
+                                    <path fill="#BBDEFB" d="M30.5 7A6.5 6.5 0 1 0 30.5 20A6.5 6.5 0 1 0 30.5 7Z" />
+                                    <path fill="#BBDEFB" d="M23 12A7 7 0 1 0 23 26A7 7 0 1 0 23 12Z" />
+                                    <g>
+                                        <path fill="#D500F9"
+                                            d="M22 44l2-7h-3l4-8h4l-3.594 6H29L22 44zM32.594 39l2-7h-3l4-8h4L36 30h3.594L32.594 39z" />
+                                    </g>
+                                </svg>
+                                <span class="weather-value">24<sup>o</sup></span>
+                            </div>
+                            <h5 class="weather-description text-light-grey py-3 px-5">Thunderstrom</h5>
+                        </div>
+                    </div>
+
+                    <div class="col-6">
+                        <h5 class="text-d-blue">Feels like 24<sup>o</sup></h5>
+                        <div class="highlights-container">
+                            <div class="highlights p-3">
+                                <span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="21" viewBox="0 0 16 21">
+                                        <path d="M20,15H15V3a1,1,0,0,0-1-1H10A1,1,0,0,0,9,3V15H4l8,8,8-8Z"
+                                            transform="translate(-4 -2)" />
+                                    </svg>
+                                </span>
+                                <span class="px-4 text-d-blue">
+                                    High
+                                </span>
+                                <span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="21" viewBox="0 0 16 21">
+                                        <path d="M20,15H15V3a1,1,0,0,0-1-1H10A1,1,0,0,0,9,3V15H4l8,8,8-8Z"
+                                            transform="translate(-4 -2)" />
+                                    </svg>
+                                </span>
+                                <span class="px-4 text-d-blue">
+                                    Low
+                                </span>
+                            </div>
+                            <div class="highlights p-3">
+                                <span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="18" viewBox="0 0 12 18">
+                                        <path
+                                            d="M12,1a.667.667,0,0,0-.536.272l-.02.026C9.87,3.324,6,9.682,6,13a6,6,0,1,0,12,0c0-3.314-3.861-9.66-5.439-11.693,0,0,0,0,0,0l-.025-.034A.667.667,0,0,0,12,1Zm2.333,13.333a1,1,0,1,1-1,1A1,1,0,0,1,14.333,14.333Z"
+                                            transform="translate(-6 -1)" />
+                                    </svg>
+                                </span>
+                                <span class="px-4 text-light-grey">
+                                    Humidity
+                                </span>
+                                <span class="text-d-blue">76 %</span>
+                            </div>
+                            <div class="highlights p-3">
+                                <span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="18" viewBox="0 0 12 18">
+                                        <path
+                                            d="M12,1a.667.667,0,0,0-.536.272l-.02.026C9.87,3.324,6,9.682,6,13a6,6,0,1,0,12,0c0-3.314-3.861-9.66-5.439-11.693,0,0,0,0,0,0l-.025-.034A.667.667,0,0,0,12,1Zm2.333,13.333a1,1,0,1,1-1,1A1,1,0,0,1,14.333,14.333Z"
+                                            transform="translate(-6 -1)" />
+                                    </svg>
+                                </span>
+                                <span class="px-4 text-light-grey">
+                                    Humidity
+                                </span>
+                                <span class="text-d-blue">76 %</span>
+                            </div>
+                            <div class="highlights p-3">
+                                <span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="18" viewBox="0 0 12 18">
+                                        <path
+                                            d="M12,1a.667.667,0,0,0-.536.272l-.02.026C9.87,3.324,6,9.682,6,13a6,6,0,1,0,12,0c0-3.314-3.861-9.66-5.439-11.693,0,0,0,0,0,0l-.025-.034A.667.667,0,0,0,12,1Zm2.333,13.333a1,1,0,1,1-1,1A1,1,0,0,1,14.333,14.333Z"
+                                            transform="translate(-6 -1)" />
+                                    </svg>
+                                </span>
+                                <span class="px-4 text-light-grey">
+                                    Humidity
+                                </span>
+                                <span class="text-d-blue">76 %</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Container with List of Cards -->
+            <div class="container shadow p-3 mb-5 bg-body-tertiary rounded forcast-container">
+                <div class="d-flex justify-content-between p-0">
+                    <p class="lead mt-2 mb-2 text-light-grey">
+                        Extended Forecast
+                    </p>
+                </div>
+
+                <div class="d-flex d-flex-column justify-content-center text-center">
+                    <div class="forcast">
+                        <div class="day">Saturday</div>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48">
+                            <path fill="#BBDEFB" d="M18.5 4A8.5 8.5 0 1 0 18.5 21A8.5 8.5 0 1 0 18.5 4Z" />
+                            <path fill="#BBDEFB" d="M19 20A7 7 0 1 0 19 34A7 7 0 1 0 19 20Z" />
+                            <path fill="#BBDEFB"
+                                d="M11 14A7 7 0 1 0 11 28 7 7 0 1 0 11 14zM38 14A6 6 0 1 0 38 26 6 6 0 1 0 38 14z" />
+                            <path fill="#BBDEFB" d="M30 19A6 6 0 1 0 30 31A6 6 0 1 0 30 19Z" />
+                            <path fill="#BBDEFB" d="M30.5 7A6.5 6.5 0 1 0 30.5 20A6.5 6.5 0 1 0 30.5 7Z" />
+                            <path fill="#BBDEFB" d="M23 12A7 7 0 1 0 23 26A7 7 0 1 0 23 12Z" />
+                            <g>
+                                <path fill="#D500F9"
+                                    d="M22 44l2-7h-3l4-8h4l-3.594 6H29L22 44zM32.594 39l2-7h-3l4-8h4L36 30h3.594L32.594 39z" />
+                            </g>
+                        </svg>
+                        <div class="weather-info">Rain</div>
+                        <div class="temp-high-low">24/21</div>
+                    </div>
+                    <div class="forcast">
+                        <div class="day">Monday</div>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48">
+                            <path fill="#BBDEFB" d="M18.5 4A8.5 8.5 0 1 0 18.5 21A8.5 8.5 0 1 0 18.5 4Z" />
+                            <path fill="#BBDEFB" d="M19 20A7 7 0 1 0 19 34A7 7 0 1 0 19 20Z" />
+                            <path fill="#BBDEFB"
+                                d="M11 14A7 7 0 1 0 11 28 7 7 0 1 0 11 14zM38 14A6 6 0 1 0 38 26 6 6 0 1 0 38 14z" />
+                            <path fill="#BBDEFB" d="M30 19A6 6 0 1 0 30 31A6 6 0 1 0 30 19Z" />
+                            <path fill="#BBDEFB" d="M30.5 7A6.5 6.5 0 1 0 30.5 20A6.5 6.5 0 1 0 30.5 7Z" />
+                            <path fill="#BBDEFB" d="M23 12A7 7 0 1 0 23 26A7 7 0 1 0 23 12Z" />
+                            <g>
+                                <path fill="#D500F9"
+                                    d="M22 44l2-7h-3l4-8h4l-3.594 6H29L22 44zM32.594 39l2-7h-3l4-8h4L36 30h3.594L32.594 39z" />
+                            </g>
+                        </svg>
+                        <div class="weather-info">Rain</div>
+                        <div class="temp-high-low">24/21</div>
+                    </div>
+                    <div class="forcast">
+                        <div class="day">Tuesday</div>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48">
+                            <path fill="#BBDEFB" d="M18.5 4A8.5 8.5 0 1 0 18.5 21A8.5 8.5 0 1 0 18.5 4Z" />
+                            <path fill="#BBDEFB" d="M19 20A7 7 0 1 0 19 34A7 7 0 1 0 19 20Z" />
+                            <path fill="#BBDEFB"
+                                d="M11 14A7 7 0 1 0 11 28 7 7 0 1 0 11 14zM38 14A6 6 0 1 0 38 26 6 6 0 1 0 38 14z" />
+                            <path fill="#BBDEFB" d="M30 19A6 6 0 1 0 30 31A6 6 0 1 0 30 19Z" />
+                            <path fill="#BBDEFB" d="M30.5 7A6.5 6.5 0 1 0 30.5 20A6.5 6.5 0 1 0 30.5 7Z" />
+                            <path fill="#BBDEFB" d="M23 12A7 7 0 1 0 23 26A7 7 0 1 0 23 12Z" />
+                            <g>
+                                <path fill="#D500F9"
+                                    d="M22 44l2-7h-3l4-8h4l-3.594 6H29L22 44zM32.594 39l2-7h-3l4-8h4L36 30h3.594L32.594 39z" />
+                            </g>
+                        </svg>
+                        <div class="weather-info">Rain</div>
+                        <div class="temp-high-low">24/21</div>
+                    </div>
+                    <div class="forcast">
+                        <div class="day">Wed</div>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48">
+                            <path fill="#BBDEFB" d="M18.5 4A8.5 8.5 0 1 0 18.5 21A8.5 8.5 0 1 0 18.5 4Z" />
+                            <path fill="#BBDEFB" d="M19 20A7 7 0 1 0 19 34A7 7 0 1 0 19 20Z" />
+                            <path fill="#BBDEFB"
+                                d="M11 14A7 7 0 1 0 11 28 7 7 0 1 0 11 14zM38 14A6 6 0 1 0 38 26 6 6 0 1 0 38 14z" />
+                            <path fill="#BBDEFB" d="M30 19A6 6 0 1 0 30 31A6 6 0 1 0 30 19Z" />
+                            <path fill="#BBDEFB" d="M30.5 7A6.5 6.5 0 1 0 30.5 20A6.5 6.5 0 1 0 30.5 7Z" />
+                            <path fill="#BBDEFB" d="M23 12A7 7 0 1 0 23 26A7 7 0 1 0 23 12Z" />
+                            <g>
+                                <path fill="#D500F9"
+                                    d="M22 44l2-7h-3l4-8h4l-3.594 6H29L22 44zM32.594 39l2-7h-3l4-8h4L36 30h3.594L32.594 39z" />
+                            </g>
+                        </svg>
+                        <div class="weather-info">Rain</div>
+                        <div class="temp-high-low">24/21</div>
+                    </div>
+                    <div class="forcast">
+                        <div class="day">Thursday</div>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48">
+                            <path fill="#BBDEFB" d="M18.5 4A8.5 8.5 0 1 0 18.5 21A8.5 8.5 0 1 0 18.5 4Z" />
+                            <path fill="#BBDEFB" d="M19 20A7 7 0 1 0 19 34A7 7 0 1 0 19 20Z" />
+                            <path fill="#BBDEFB"
+                                d="M11 14A7 7 0 1 0 11 28 7 7 0 1 0 11 14zM38 14A6 6 0 1 0 38 26 6 6 0 1 0 38 14z" />
+                            <path fill="#BBDEFB" d="M30 19A6 6 0 1 0 30 31A6 6 0 1 0 30 19Z" />
+                            <path fill="#BBDEFB" d="M30.5 7A6.5 6.5 0 1 0 30.5 20A6.5 6.5 0 1 0 30.5 7Z" />
+                            <path fill="#BBDEFB" d="M23 12A7 7 0 1 0 23 26A7 7 0 1 0 23 12Z" />
+                            <g>
+                                <path fill="#D500F9"
+                                    d="M22 44l2-7h-3l4-8h4l-3.594 6H29L22 44zM32.594 39l2-7h-3l4-8h4L36 30h3.594L32.594 39z" />
+                            </g>
+                        </svg>
+                        <div class="weather-info">Rain</div>
+                        <div class="temp-high-low">24/21</div>
+                    </div>
+                    <div class="forcast">
+                        <div class="day">Friday</div>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48">
+                            <path fill="#BBDEFB" d="M18.5 4A8.5 8.5 0 1 0 18.5 21A8.5 8.5 0 1 0 18.5 4Z" />
+                            <path fill="#BBDEFB" d="M19 20A7 7 0 1 0 19 34A7 7 0 1 0 19 20Z" />
+                            <path fill="#BBDEFB"
+                                d="M11 14A7 7 0 1 0 11 28 7 7 0 1 0 11 14zM38 14A6 6 0 1 0 38 26 6 6 0 1 0 38 14z" />
+                            <path fill="#BBDEFB" d="M30 19A6 6 0 1 0 30 31A6 6 0 1 0 30 19Z" />
+                            <path fill="#BBDEFB" d="M30.5 7A6.5 6.5 0 1 0 30.5 20A6.5 6.5 0 1 0 30.5 7Z" />
+                            <path fill="#BBDEFB" d="M23 12A7 7 0 1 0 23 26A7 7 0 1 0 23 12Z" />
+                            <g>
+                                <path fill="#D500F9"
+                                    d="M22 44l2-7h-3l4-8h4l-3.594 6H29L22 44zM32.594 39l2-7h-3l4-8h4L36 30h3.594L32.594 39z" />
+                            </g>
+                        </svg>
+                        <div class="weather-info">Rain</div>
+                        <div class="temp-high-low">24 <sup>o</sup>/21<sup>o</sup></div>
+                    </div>
+                    <div class="forcast">
+                        <div class="day">Sunday</div>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48">
+                            <path fill="#BBDEFB" d="M18.5 4A8.5 8.5 0 1 0 18.5 21A8.5 8.5 0 1 0 18.5 4Z" />
+                            <path fill="#BBDEFB" d="M19 20A7 7 0 1 0 19 34A7 7 0 1 0 19 20Z" />
+                            <path fill="#BBDEFB"
+                                d="M11 14A7 7 0 1 0 11 28 7 7 0 1 0 11 14zM38 14A6 6 0 1 0 38 26 6 6 0 1 0 38 14z" />
+                            <path fill="#BBDEFB" d="M30 19A6 6 0 1 0 30 31A6 6 0 1 0 30 19Z" />
+                            <path fill="#BBDEFB" d="M30.5 7A6.5 6.5 0 1 0 30.5 20A6.5 6.5 0 1 0 30.5 7Z" />
+                            <path fill="#BBDEFB" d="M23 12A7 7 0 1 0 23 26A7 7 0 1 0 23 12Z" />
+                            <g>
+                                <path fill="#D500F9"
+                                    d="M22 44l2-7h-3l4-8h4l-3.594 6H29L22 44zM32.594 39l2-7h-3l4-8h4L36 30h3.594L32.594 39z" />
+                            </g>
+                        </svg>
+                        <div class="weather-info">Rain</div>
+                        <div class="temp-high-low">24/21</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
