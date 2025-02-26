@@ -1,6 +1,21 @@
 import Key from './Key'
+import LanguageElement from './LanguageElement';
+import { languages } from './languages'
 
 export default function App() {
+    const [currentWord, setCurrentWord] = useState('Apple');
+
+    const currentWordCharacter = [...currentWord]
+    console.log(currentWordCharacter)
+
+    const languageElements = languages && languages.map(language => (
+        <LanguageElement
+            key={language.name}
+            name={language.name}
+            backgroundColor={language.backgroundColor}
+            color={language.color} />
+    ));
+
     return (
         <main>
             <section className="game-header">

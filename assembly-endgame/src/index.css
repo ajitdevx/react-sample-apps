@@ -58,6 +58,7 @@ section {
     font-size: .85rem;
 }
 
+/**
 .game-languages>span:nth-child(1) {
     background-color: #E2680F;
 }
@@ -95,6 +96,7 @@ section {
 .game-languages>span:nth-child(9) {
     background-color: #2D519F;
 }
+**/
 
 .game-input-keys {
     text-align: center;
