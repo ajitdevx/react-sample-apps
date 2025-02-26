@@ -1,4 +1,11 @@
-export default function App () {
+import Header from "./components/Header"
+import Main from "./components/Main"
+export default function App() {
 
-  return (<h2>Meme Generator</h2>)
+  return (
+    <div className="app">
+      <Header />
+      <Main />
+    </div>
+  )
 }
