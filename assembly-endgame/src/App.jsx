@@ -4,6 +4,7 @@ import LanguageElement from './LanguageElement';
 import { languages } from './languages'
 import Letter from './Letter';
 import clsx from 'clsx';
+import { getFarewellText } from './util';
 
 export default function App() {
     const [currentWord, setCurrentWord] = useState('react');
@@ -64,7 +65,38 @@ export default function App() {
             key={char}
             value={char}
             addGuessedLetter={() => addGuessedLetter(char)} />
-    })
+    });
+
+
+    const renderGameStatus = () => {
+        if (!isGameOver) {
+            return (
+                <div className={wrongGuessCount > 0 ? "game-status farewell" : "game-status"}>
+                    <p>{
+                        wrongGuessCount > 0 &&
+                        getFarewellText(languages[wrongGuessCount - 1].name)
+                    }</p>
+                </div>
+            )
+        }
+
+        if (isGameWon) {
+            return (
+                <div className="game-status won">
+                    <p><strong>You win!</strong></p>
+                    <p><small>Well done! 🎉</small></p>
+                </div>
+            )
+        }
+        else {
+            return (
+                <div className="game-status lost">
+                    <p><strong>Game over!</strong></p>
+                    <p><small>You lose! Better start learning Assembly 😭</small></p>
+                </div>
+            )
+        }
+    }
 
     return (
         <main>
@@ -72,44 +104,14 @@ export default function App() {
                 <h2>Assembly: Endgame</h2>
                 <p>Guess the word in under 8 attempts to keep the programming world safe from Assembly!</p>
 
-
-                {/* {
-                    isGameWon && (
-                        <div className="game-status">
-                            <p><i>"Farewell HTML & CSS"</i></p>
-                        </div>
-                    )
-                } */}
-
-                {
-                    isGameOver ? (
-                        isGameWon ? (
-                            <div className="game-status won">
-                                <p><strong>You win!</strong></p>
-                                <p><small>Well done! 🎉</small></p>
-                            </div>
-                        ) :
-                            (
-                                isGameLost && (
-                                    <div className="game-status lost">
-                                        <p><strong>Game over!</strong></p>
-                                        <p><small>You lose! Better start learning Assembly 😭</small></p>
-                                    </div>
-                                )
-                            )
-                    ) : (
-                        <div className="game-status">
-                            
-                        </div>
-                    )
-                }
+                {renderGameStatus()}
             </section>
 
             <section className="game-languages">
                 {languageElements}
             </section>
 
-            <section className="game-input-letter">
+            <section className="game-word">
                 {letterElements}
             </section>
 

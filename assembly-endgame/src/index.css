@@ -46,6 +46,12 @@ section {
     font-size: 1.3rem;
 }
 
+.game-status.farewell {
+    background-color: #7A5EA7;
+    color: #F9F4DA;
+    font-style: italic;
+}
+
 .game-status.won {
     background-color: #10A95B;
     color: #F9F4DA;
@@ -114,7 +120,7 @@ section {
 }
 **/
 
-.game-input-letter>span {
+.game-word>span {
     padding: 10px 15px;
     width: 30px;
     height: 30px;
