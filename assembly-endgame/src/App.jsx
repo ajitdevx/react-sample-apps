@@ -16,9 +16,9 @@ export default function App() {
         guessedLetters.includes(letter)
     ).length;
 
-    const isGameWon = rightGuessCount == currentLetters.length;
     const wrongGuessCount = guessedLetters.length - rightGuessCount;
-    const isGameLost = wrongGuessCount > currentLetters.length || !isGameWon;
+    const isGameWon = rightGuessCount === currentLetters.length;
+    const isGameLost = wrongGuessCount >= 8;
     const isGameOver = isGameWon || isGameLost;
 
     const addGuessedLetter = (letter) => {
@@ -72,9 +72,37 @@ export default function App() {
                 <h2>Assembly: Endgame</h2>
                 <p>Guess the word in under 8 attempts to keep the programming world safe from Assembly!</p>
 
-                <div className="game-status">
-                    <p><i>"Farewell HTML & CSS"</i></p>
-                </div>
+
+                {/* {
+                    isGameWon && (
+                        <div className="game-status">
+                            <p><i>"Farewell HTML & CSS"</i></p>
+                        </div>
+                    )
+                } */}
+
+                {
+                    isGameOver ? (
+                        isGameWon ? (
+                            <div className="game-status won">
+                                <p><strong>You win!</strong></p>
+                                <p><small>Well done! 🎉</small></p>
+                            </div>
+                        ) :
+                            (
+                                isGameLost && (
+                                    <div className="game-status lost">
+                                        <p><strong>Game over!</strong></p>
+                                        <p><small>You lose! Better start learning Assembly 😭</small></p>
+                                    </div>
+                                )
+                            )
+                    ) : (
+                        <div className="game-status">
+                            
+                        </div>
+                    )
+                }
             </section>
 
             <section className="game-languages">
