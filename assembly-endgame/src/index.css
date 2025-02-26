@@ -98,19 +98,14 @@ section {
 }
 **/
 
-.game-input-keys {
-    text-align: center;
-}
-
-.game-input-keys>input[type="text"] {
-    padding: 5px;
+.game-input-letter>span {
+    padding: 10px 15px;
     width: 30px;
     height: 30px;
-    background-color: transparent;
+    background-color: #323232;
     border-right: #323232;
     border-bottom: 1px solid #F9F4DA;
-    margin: 1px;
-    outline: none;
+    margin: 3px;
     color: #F9F4DA;
     font-family: "Hanken Grotesk", serif;
     font-size: 1rem;
@@ -119,19 +114,21 @@ section {
 
 .game-keys {
     text-align: center;
+    margin: 10px 0;
 }
 
 .game-keys>.key {
     background-color: #FCBA29;
     color: #1E1E1E;
     border-color: #D7D7D7;
-    width: 40px;
-    height: 40px;
+    width: 33px;
+    height: 33px;
     font-family: "Hanken Grotesk", serif;
     font-size: 1rem;
     font-weight: 600;
-    margin: 5px;
+    margin: 3px;
     border-radius: 5px;
+    text-transform: uppercase;
 }
 
 .key.right {
@@ -151,4 +148,8 @@ section {
     font-size: 1rem;
     font-weight: 700;
     border-radius: 3px;
+}
+
+button {
+    cursor: pointer;
 }
